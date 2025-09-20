@@ -1,7 +1,41 @@
 #include <iostream>
 
-bool isTheGameOver() {
-
+bool isTheGameOver(char field[3][3]) {
+    if ((
+        (field[0][0] == 'x' && field[0][1] == 'x' && field[0][2] == 'x') ||
+        (field[1][0] == 'x' && field[1][1] == 'x' && field[1][2] == 'x') ||
+        (field[2][0] == 'x' && field[2][1] == 'x' && field[2][2] == 'x')
+        ) ||
+        (
+        (field[0][0] == 'x' && field[1][0] == 'x' && field[2][0] == 'x') ||
+        (field[0][1] == 'x' && field[1][1] == 'x' && field[2][1] == 'x') ||
+        (field[0][2] == 'x' && field[1][2] == 'x' && field[2][2] == 'x')
+        ) ||
+        (
+        (field[0][0] == 'x' && field[1][1] == 'x' && field[2][2] == 'x') ||
+        (field[0][2] == 'x' && field[1][1] == 'x' && field[2][0] == 'x')
+        )) {
+        std::cout << "x win!" << std::endl;
+        return true;
+    } else if ((
+        (field[0][0] == 'o' && field[0][1] == 'o' && field[0][2] == 'o') ||
+        (field[1][0] == 'o' && field[1][1] == 'o' && field[1][2] == 'o') ||
+        (field[2][0] == 'o' && field[2][1] == 'o' && field[2][2] == 'o')
+        ) ||
+        (
+        (field[0][0] == 'o' && field[1][0] == 'o' && field[2][0] == 'o') ||
+        (field[0][1] == 'o' && field[1][1] == 'o' && field[2][1] == 'o') ||
+        (field[0][2] == 'o' && field[1][2] == 'o' && field[2][2] == 'o')
+        ) ||
+        (
+        (field[0][0] == 'o' && field[1][1] == 'o' && field[2][2] == 'o') ||
+        (field[0][2] == 'o' && field[1][1] == 'o' && field[2][0] == 'o')
+        )) {
+        std::cout << "o win!" << std::endl;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 int main() {
