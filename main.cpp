@@ -4,10 +4,6 @@ bool isTheGameOver() {
 
 }
 
-void bot(char field, int playerRow, int playerCol) {
-    
-}
-
 int main() {
     while (true) {
         char field[3][3];
