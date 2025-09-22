@@ -1,6 +1,6 @@
 #include <iostream>
 
-bool isTheGameOver(char field[3][3]) {
+bool isTheGameOver(char (*field)[3]) {
     if ((
         (field[0][0] == 'x' && field[0][1] == 'x' && field[0][2] == 'x') ||
         (field[1][0] == 'x' && field[1][1] == 'x' && field[1][2] == 'x') ||
