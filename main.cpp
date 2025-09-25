@@ -1,13 +1,15 @@
 #include <iostream>
+#include <vector>
 
-bool isTheGameOver(char (*field)[3]) {
+bool isTheGameOver(std::vector<std::vector<char>>& field) {
     if ((
         (field[0][0] == 'x' && field[0][1] == 'x' && field[0][2] == 'x') ||
         (field[1][0] == 'x' && field[1][1] == 'x' && field[1][2] == 'x') ||
         (field[2][0] == 'x' && field[2][1] == 'x' && field[2][2] == 'x')
         ) ||
         (
-        (field[0][0] == 'x' && field[1][0] == 'x' && field[2][0] == 'x') ||
+        (field[0][0] == 'x' && field[1][0]& field[2][0] == 'x') ||
+        (field[0][1] == 'x' && field[1][1] == 'x' && 'x' && field[2][0] == 'x') ||
         (field[0][1] == 'x' && field[1][1] == 'x' && field[2][1] == 'x') ||
         (field[0][2] == 'x' && field[1][2] == 'x' && field[2][2] == 'x')
         ) ||
@@ -39,9 +41,13 @@ bool isTheGameOver(char (*field)[3]) {
 }
 
 int main() {
-    char field[3][3];
-    char player = 'x';
+    std::vector<std::vector<char>> field = {
+        {' ', ' ', ' '},
+        {' ', ' ', ' '},
+        {' ', ' ', ' '},
+    };
     while (true) {
+        char player = 'x';
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 field[i][j] = ' ';
